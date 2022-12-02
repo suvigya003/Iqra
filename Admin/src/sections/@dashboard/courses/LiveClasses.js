@@ -113,7 +113,7 @@ export default function LiveClasses() {
     try {
       console.log(liveClasses);
       await axios
-        .post("http://localhost:8000/api/ias/addLiveClasses", liveClasses) 
+        .post("https://iqra.onrender.com/api/ias/addLiveClasses", liveClasses) 
         .then((res) => {
           console.log(res); 
         })
@@ -135,7 +135,7 @@ export default function LiveClasses() {
   useEffect(() => { 
     console.log(liveClassesTableData);
     const getLiveClassesData= async()=>{ 
-      const {data}=await axios.get("http://localhost:8000/api/ias/getLiveClasses"); 
+      const {data}=await axios.get("https://iqra.onrender.com/api/ias/getLiveClasses"); 
       console.log(data); 
       setLiveClassesTableData(data);   
       console.log(liveClassesTableData); 

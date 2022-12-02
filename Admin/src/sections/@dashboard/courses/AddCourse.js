@@ -210,7 +210,8 @@ export default function AddCourse() {
       formData.append('courseDuration', course.courseDuration);
       console.log('formData', formData);
       await axios
-        .post("http://localhost:8000/api/ias/addAddCourse", formData) 
+        .post("https://iqra.onrender.com/api/ias/addAddCourse", formData)
+        // .post("http://localhost:8000/api/ias/addAddCourse", formData) 
         .then((res) => {
           console.log(res); 
         })
@@ -230,7 +231,8 @@ export default function AddCourse() {
       console.log(fAQquestions);
       console.log(fAQanswers);
      const register= await axios
-        .post("http://localhost:8000/api/ias/addFaq", fAQquestions) 
+        .post("https://iqra.onrender.com/api/ias/addFaq", fAQquestions) 
+        // .post("http://localhost:8000/api/ias/addFaq", fAQquestions) 
         .then((res) => {
           console.log(res); 
         })
@@ -255,7 +257,7 @@ export default function AddCourse() {
   useEffect(() => { 
     console.log(course);
     const courseData= async()=>{ 
-      const {data}=await axios.get("http://localhost:8000/api/ias/getAddCourse"); 
+      const {data}=await axios.get("https://iqra.onrender.com/api/ias/getAddCourse"); 
       console.log(data); 
       setCourseTableData(data);   
       console.log(courseTableData); 

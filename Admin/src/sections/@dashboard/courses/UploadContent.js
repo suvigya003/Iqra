@@ -146,7 +146,7 @@ export default function UploadContent() {
     try {
       console.log(uploadContent);
       await axios
-        .post("http://localhost:8000/api/ias/addUploadContent", uploadContent) 
+        .post("https://iqra-server.herokuapp.com/api/ias/addUploadContent", uploadContent) 
         .then((res) => {
           console.log(res); 
         })
@@ -169,13 +169,13 @@ export default function UploadContent() {
   useEffect(() => { 
     console.log(uploadContentTableData);
     const uploadContentData= async()=>{ 
-      const {data}=await axios.get("http://localhost:8000/api/ias/getUploadContent"); 
+      const {data}=await axios.get("https://iqra.onrender.com/api/ias/getUploadContent"); 
       console.log(data); 
       setUploadContentTableData(data);   
       console.log(uploadContentTableData); 
     }
     const courseData= async()=>{ 
-      const {data}=await axios.get("http://localhost:8000/api/ias/getAddCourse"); 
+      const {data}=await axios.get("https://iqra.onrender.com/api/ias/getAddCourse"); 
       console.log(data); 
       setCourseData(data);   
       console.log(courseData); 
@@ -394,7 +394,7 @@ onSubmit={handleSubmit} action='/upload'
         </Box>
         
 
-        {/* <UserListToolbar numSelected={selected.length} filterName={filterName} onFilterName={handleFilterByName} /> */}
+        <UserListToolbar numSelected={selected.length} filterName={filterName} onFilterName={handleFilterByName} />
         <Scrollbar>
           <TableContainer sx={{ minWidth: 800 }}>
             <Table>
